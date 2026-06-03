@@ -1,24 +1,22 @@
-name: Build and Deploy to GitHub Pages
+name: Validate Codebase
 
 on:
   push:
     branches:
-      - main # Or master, whichever is your default branch
-  workflow_dispatch:
-
-permissions:
-  contents: write
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  build-and-deploy:
-    concurrency: ci-${{ github.ref }}
+  validate:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
 
-      - name: Install and Build 🔧
+      - name: Install Node.js 🔧
         uses: actions/setup-node@v4
         with:
           node-version: 18
@@ -30,12 +28,10 @@ jobs:
           else
             npm install
           fi
+          npm install @tailwindcss/oxide-linux-x64-gnu
 
-      - name: Build
+      - name: Run Linter & Type Check
+        run: npm run lint
+
+      - name: Run Build
         run: npm run build
-
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist # The folder the action should deploy.
-          branch: gh-pages # The branch the action should deploy to.
