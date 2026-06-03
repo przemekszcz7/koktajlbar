@@ -16,7 +16,9 @@ import {
   Heart,
   Droplet,
   GlassWater,
-  PartyPopper
+  PartyPopper,
+  Facebook,
+  Instagram
 } from "lucide-react";
 import { DRINKS_DATA, OPENING_HOURS, BAR_INFO, Drink } from "./data";
 
@@ -156,11 +158,11 @@ export default function App() {
                   <span>{BAR_INFO.phone}</span>
                 </a>
                 <div className="flex space-x-4 pt-2">
-                  <a href={BAR_INFO.facebook} target="_blank" rel="noreferrer" className="w-10 h-10 bg-paper-dark rounded-full flex items-center justify-center border border-pencil-gray text-charcoal">
-                    <i className="fa-brands fa-facebook-f text-lg"></i>
+                  <a href={BAR_INFO.facebook} target="_blank" rel="noreferrer" className="w-10 h-10 bg-paper-dark rounded-full flex items-center justify-center border border-pencil-gray text-charcoal hover:text-sepia hover:border-sepia transition-all">
+                    <Facebook size={18} />
                   </a>
-                  <a href={BAR_INFO.instagram} target="_blank" rel="noreferrer" className="w-10 h-10 bg-paper-dark rounded-full flex items-center justify-center border border-pencil-gray text-charcoal">
-                    <i className="fa-brands fa-instagram text-lg"></i>
+                  <a href={BAR_INFO.instagram} target="_blank" rel="noreferrer" className="w-10 h-10 bg-paper-dark rounded-full flex items-center justify-center border border-pencil-gray text-charcoal hover:text-sepia hover:border-sepia transition-all">
+                    <Instagram size={18} />
                   </a>
                 </div>
               </div>
@@ -234,7 +236,7 @@ export default function App() {
               href="#nasze-specjaly" 
               className="px-8 py-3 bg-sepia text-charcoal font-hand text-xl font-bold rounded-lg shadow-lg hover:bg-sepia/90 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 border border-sepia"
             >
-              Przejdź do Notesu Drinków
+              Przejdź do naszych specjałów
             </a>
             <a 
               href="#kontakt" 
@@ -396,6 +398,7 @@ export default function App() {
                       alt={drink.name} 
                       className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
                       referrerPolicy="no-referrer"
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-[#C4A882]/10 mix-blend-color group-hover:bg-transparent transition-all duration-300"></div>
                     <div className="absolute top-3 right-3 bg-paper-light border border-sepia text-charcoal font-hand text-sm px-2.5 py-1 rounded shadow-md rotate-3">
@@ -731,8 +734,8 @@ export default function App() {
                       className="group flex flex-col items-center"
                     >
                       <div className="w-16 h-16 rounded-full border-2 border-dashed border-sepia flex items-center justify-center bg-[#FAF6F0] p-1 group-hover:scale-105 group-hover:-rotate-3 duration-300 shadow-sm">
-                        <div className="w-full h-full rounded-full border border-sepia flex items-center justify-center text-charcoal bg-paper-dark">
-                          <i className="fa-brands fa-facebook-f text-lg text-charcoal"></i>
+                        <div className="w-full h-full rounded-full border border-sepia flex items-center justify-center text-charcoal bg-paper-dark group-hover:text-sepia duration-300">
+                          <Facebook size={20} className="text-charcoal group-hover:text-sepia transition-colors duration-250" />
                         </div>
                       </div>
                       <span className="font-hand text-sm mt-1 text-charcoal-light group-hover:text-sepia">Facebook</span>
@@ -746,8 +749,8 @@ export default function App() {
                       className="group flex flex-col items-center"
                     >
                       <div className="w-16 h-16 rounded-full border-2 border-dashed border-sepia flex items-center justify-center bg-[#FAF6F0] p-1 group-hover:scale-105 group-hover:rotate-3 duration-300 shadow-sm">
-                        <div className="w-full h-full rounded-full border border-sepia flex items-center justify-center text-charcoal bg-paper-dark">
-                          <i className="fa-brands fa-instagram text-lg text-charcoal"></i>
+                        <div className="w-full h-full rounded-full border border-sepia flex items-center justify-center text-charcoal bg-paper-dark group-hover:text-sepia duration-300">
+                          <Instagram size={20} className="text-charcoal group-hover:text-sepia transition-colors duration-250" />
                         </div>
                       </div>
                       <span className="font-hand text-sm mt-1 text-charcoal-light group-hover:text-sepia">Instagram</span>
@@ -823,10 +826,10 @@ export default function App() {
 
           <div className="flex space-x-4">
             <a href={BAR_INFO.facebook} target="_blank" rel="noreferrer" className="w-10 h-10 border border-pencil-gray/20 rounded-full flex items-center justify-center text-[#FAF6F0] hover:text-sepia hover:border-sepia transition-all">
-              <i className="fa-brands fa-facebook-f text-sm"></i>
+              <Facebook size={16} />
             </a>
             <a href={BAR_INFO.instagram} target="_blank" rel="noreferrer" className="w-10 h-10 border border-pencil-gray/20 rounded-full flex items-center justify-center text-[#FAF6F0] hover:text-sepia hover:border-sepia transition-all">
-              <i className="fa-brands fa-instagram text-sm"></i>
+              <Instagram size={16} />
             </a>
           </div>
 
