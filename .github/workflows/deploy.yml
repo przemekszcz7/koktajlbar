@@ -30,6 +30,7 @@ jobs:
           else
             npm install
           fi
+          npm install @tailwindcss/oxide-linux-x64-gnu
 
       - name: Build
         run: npm run build
